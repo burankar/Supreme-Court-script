@@ -1,57 +1,23 @@
 '''This is a basic script that will output the U.S. Supreme Court makeup based on user input of a year. I'm making it to practice python objects and syntax. it will be updated with more functionality as I get more comfortable with Python.
 '''
 	
-'''specific courts set as empty lists working reverse chronologically'''
-
-#Roberts Court: 2005 - present
+#specific courts set as empty lists working reverse chronologically
 roberts_court = []
-
-#Renquist Court: 1986 - 2005
 renquist_court = []
-
-#Burger Court: 1969 - 1986
 burger_court = []
-
-#Warren Court: 1954 -1969
 warren_court = []
-
-#Vinson Court: 1946 - 1953
 vinson_court = []
-
-#Stone Court: 1941 - 1946
 stone_court = []
-
-#Hughes Court: 1930 - 1041
 hughes_court = []
-
-#Taft Court: 1921 - 1930
 taft_court = []
-
-#White Court: 1910 - 1921
 white_court = []
-
-#Fuller Court: 1888 - 1910
 fuller_court = []
-
-#Waite Court: 1874 - 1888
-waite_court = []
-
-#Chase Court: 1864 - 1873 
+waite_court = [] 
 chase_court = []
-
-#Taney Court: 1835 - 1864
 taney_court = []
-
-#Marshall Court: 1801 - 1835
 marshall_court = []
-
-#Ellsworth Court: 1796 - 1800
 ellsworth_court = []
-
-#Rutledge Court: 1795 - 1795
 rutledge_court = []
-
-#Jay Court: 1789 - 1795
 jay_court = []
 
 #elif statement to verify integer input
@@ -75,12 +41,47 @@ thomas = Justice('Clarence Thomas', 1991, 2014)
 
 list_of_justices = [roberts, kagan, sotomayor, alito, breyer, ginsburg, thomas]
 
+'''
+sorts through list of justices. It's close to being complete but still not perfect. If someone raw inputs '2014' it will probably draw the Roberts court with additional justices such as David Souter (served in Roberts court but retired in 2009). I think I need to add a boolean based around raw_input to fix it.
+'''
+
 def justice_sorting(list):
 	for x in list:
 		if x.end_date >= 2005:
 			roberts_court.append(x.name)
-
-
+		elif x.end_date <= 2005 && x.end_date >= 1986:
+			rehnquist_court.append(x.name)
+		elif x.end_date <= 1986 && x.end_date >= 1969:
+			burger_court.append(x.name)
+		elif x.end_date <= 1969 && x.end_date >= 1954:
+			warren_court.append(x.name)
+		elif x.end_date <= 1954 && x.end_date >= 1946:
+			vinson_court.append(x.name)
+		elif x.end_date <= 1946 && x.end_date >= 1941:
+			stone_court.append(x.name)
+		elif x.end_date <= 1941 && x.end_date >= 1930:
+			hughes_court.append(x.name)
+		elif x.end_date <= 1930 && x.end_date >= 1921:
+			taft_court.append(x.name)
+		elif x.end_date <= 1921 && x.end_date >= 1910:
+			white_court.append(x.name)
+		elif x.end_date <= 1910 && x.end_date >= 1888:
+			fuller_court.append(x.name)
+		elif x.end_date <= 1888 && x.end_date >= 1874:
+			waite_court.append(x.name)
+		elif x.end_date <= 1874 && x.end_date >= 1864:
+			chase_court.append(x.name)
+		elif x.end_date <= 1864 && x.end_date >= 1835:
+			taney_court.append(x.name)
+		elif x.end_date <= 1835 && x.end_date >= 1801:
+			marshall_court.append(x.name)
+		elif x.end_date <= 1800 && x.end_date >= 1796:
+			ellsworth_court.append(x.name)
+		elif x.end_date <= 1796 && x.end_date >= 1795:
+			rutledge_court.append(x.name)
+		elif x.end_date <= 1795 && x.end_date >= 1789:
+			jay_court.append(x.name)	
+			
 justice_sorting(list_of_justices)	
 print roberts_court
 
