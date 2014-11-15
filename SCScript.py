@@ -36,7 +36,7 @@ def calculate_court(list):
 
 print YEAR_INPUT			
 calculate_court(list_of_justices)
-
+print RESULTS
 			
 
 
