@@ -79,7 +79,7 @@ def justice_sorting(list):
 	for x in list:
 		if x.end_date >= 2005:
 			roberts_court.append(x.name)
-	return roberts_court
+
 
 justice_sorting(list_of_justices)	
 print roberts_court
