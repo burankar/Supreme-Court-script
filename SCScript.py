@@ -31,12 +31,12 @@ RESULTS = []
 
 def calculate_court(list):
 	for x in list:
-		if YEAR_INPUT >= x.begin_date && YEAR_INPUT <= x.end_date:
+		if YEAR_INPUT >= x.begin_date and YEAR_INPUT <= x.end_date:
 			RESULTS.append(x.name)
 
 print YEAR_INPUT			
 calculate_court(list_of_justices)
-print RESULTS
+print 'The Supreme Court Justices were: %s, %s, %s, %s, %s, %s, %s, %s, %s,' % RESULTS
 			
 
 
