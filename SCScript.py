@@ -28,16 +28,29 @@ list_of_justices = [roberts, kagan, sotomayor, alito, breyer, ginsburg, thomas, 
 
 YEAR_INPUT = int(raw_input("Please enter year:"))
 RESULTS = []
+LEFT_COURT = []
+ENTERED_COURT = []
 
 def calculate_court(list):
 	for x in list:
 		if YEAR_INPUT >= x.begin_date and YEAR_INPUT <= x.end_date:
 			RESULTS.append(x.name)
+	if len(RESULTS) >= 10:
+		for x in list:
+			if YEAR_INPUT == x.end_date:
+				RESULTS.remove(x.name)
+				LEFT_COURT.append(x.name)
+			if YEAR_INPUT == x.begin_date:
+				RESULTS.remove(x.name)
+				ENTERED_COURT.append(x.name)
 
 print YEAR_INPUT			
 calculate_court(list_of_justices)
+print RESULTS
+print LEFT_COURT
+print ENTERED_COURT
 
-print 'The Supreme Court Justices were: %s, %s, %s, %s, %s, %s, %s, %s, %s,' % tuple(RESULTS)
+#print 'The Supreme Court Justices were: %s, %s, %s, %s, %s, %s, %s, %s, %s,' % tuple(RESULTS)
 			
 
 
