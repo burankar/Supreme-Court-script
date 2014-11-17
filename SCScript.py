@@ -1,4 +1,9 @@
-'''This is the first Python program I've written completely from scratch. It is a basic script that will output the U.S. Supreme Court makeup based on user input of a year. I'm making it to practice objects, syntax, proper PEP 8 conventions, and source code management. It will be updated with more functionality as I get more comfortable with Python. I don't have every justice added because...well, there are a lot of justices!
+'''
+This is the first Python program I've written completely from scratch.
+It is a basic script that will output the U.S. Supreme Court makeup based on user input of a year. 
+I'm making it to practice objects, syntax, proper PEP 8 conventions, and source code management.
+It will be updated with more functionality as I get more comfortable with Python.
+I don't have every justice added because...well, there are a lot of justices!
 '''
 
 '''
@@ -52,7 +57,9 @@ fortas = Justice('Abe Fortas', 1965, 1969)
 goldberg = Justice('Arthur Goldberg', 1962, 1965)
 white = Justice('Byron White', 1962, 1993)
 
-list_of_justices = [roberts, kagan, sotomayor, alito, breyer, ginsburg, thomas, kennedy, scalia, souter, oconnor, stevens, rehnquist, powell, blackmun, burger, marshall, fortas, goldberg, white]
+list_of_justices = [roberts, kagan, sotomayor, alito, breyer, ginsburg, \
+	 thomas, kennedy, scalia, souter, oconnor, stevens, rehnquist, powell, \
+	 blackmun, burger, marshall, fortas, goldberg, white]
 
 YEAR_INPUT = int(raw_input("Please enter year:"))
 RESULTS = []
@@ -63,7 +70,9 @@ INP_STR = str(YEAR_INPUT)
 #need something to verify integer input for year
 
 '''
-Below is the function to assemble the correct court composition. I have some lines commented out because they weren't printing correctly. I commented them out so this works but I'm keeping these lines commented out so I have an idea where I left off with the optimal code format.
+Below is the function to assemble the correct court composition.
+I have some lines commented out because they weren't printing correctly. 
+I commented them out so this works but I'm keeping these lines commented out so I have an idea where I left off with the optimal code format.
 '''
 
 def calculate_court(list):
