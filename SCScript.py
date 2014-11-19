@@ -1,11 +1,10 @@
 '''
 This is the first Python program I've written completely from scratch.
-It is a basic script that will output the U.S. Supreme Court makeup based on user input of a year. 
+It is a basic script that will output the U.S. Supreme Court makeup based on user input of a year.
 I'm making it to practice objects, syntax, proper PEP 8 conventions, and source code management.
 It will be updated with more functionality as I get more comfortable with Python.
 I don't have every justice added because...well, there are a lot of justices!
 '''
-
 '''
 The MIT License (MIT)
 Copyright (c) 2014 Brian Urankar
@@ -26,16 +25,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-
-#Justice class. Each justice is an instance of this
 class Justice(object):
-	
+
+
 	def __init__(self, name, begin_date, end_date):
 		self.name = name
 		self.begin_date = begin_date
 		self.end_date = end_date
+		
+		
 
-#justice instances
 roberts = Justice('John Roberts', 2005, 2014)
 kagan = Justice('Elena Kagan', 2010, 2014)
 sotomayor = Justice('Sonia Sotomayor', 2009, 2014)
@@ -58,42 +57,35 @@ goldberg = Justice('Arthur Goldberg', 1962, 1965)
 white = Justice('Byron White', 1962, 1993)
 
 list_of_justices = [roberts, kagan, sotomayor, alito, breyer, ginsburg, \
-	 thomas, kennedy, scalia, souter, oconnor, stevens, rehnquist, powell, \
-	 blackmun, burger, marshall, fortas, goldberg, white]
-
-YEAR_INPUT = int(raw_input("Please enter year:"))
+					thomas, kennedy, scalia, souter, oconnor, stevens, \
+					rehnquist, powell, blackmun, burger, marshall, fortas, \
+					goldberg, white]
+while True:
+	try: 
+		YEAR_INPUT = int(raw_input("Please enter year(YYYY):"))
+		break
+	except ValueError:
+		print "Sorry!This program only accepts years in YYYY format."
+	
 RESULTS = []
 LEFT_COURT = []
 ENTERED_COURT = []
 INP_STR = str(YEAR_INPUT)
 
-#need something to verify integer input for year
-
-'''
-Below is the function to assemble the correct court composition.
-I have some lines commented out because they weren't printing correctly. 
-I commented them out so this works but I'm keeping these lines commented out so I have an idea where I left off with the optimal code format.
-'''
 
 def calculate_court(list):
 	for x in list:
 		if YEAR_INPUT >= x.begin_date and YEAR_INPUT <= x.end_date:
 			RESULTS.append(x.name)
-	if len(RESULTS) >= 10:
-		for x in list_of_justices:
-			if YEAR_INPUT == x.end_date:
-				RESULTS.remove(x.name)
-				LEFT_COURT.append(x.name)
-			if YEAR_INPUT == x.begin_date:
-				RESULTS.remove(x.name)
-				ENTERED_COURT.append(x.name)
-		#print "The Justices in " + INP_STR + " were: %s" % tuple(RESULTS)
-		#print "Justice %s left the court in " + INP_STR % (LEFT_COURT)
-		#print "Justice %s joined the court in " + INP_STR % (ENTERED_COURT)
-	#else:
-		#print "The Justices in " + INP_STR + "were: %s" % tuple(RESULTS)
+		if len(RESULTS) >= 10:
+			for x in list_of_justices:
+				if YEAR_INPUT == x.end_date:
+					RESULTS.remove(x.name)
+					LEFT_COURT.append(x.name)
+				if YEAR_INPUT == x.begin_date:
+					RESULTS.remove(x.name)
+					ENTERED_COURT.append(x.name)
 
-#This is the current function that actually prints in the correct format
 def correct_answer():
 	print "In " + INP_STR + " the Justices were:"
 	for x in RESULTS:
